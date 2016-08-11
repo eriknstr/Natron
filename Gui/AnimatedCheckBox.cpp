@@ -189,7 +189,7 @@ AnimatedCheckBox::paintEvent(QPaintEvent* e)
 
 
     ///Draw frame
-    activeColor.setRgb(40, 40, 40);
+    activeColor.setRgb(60, 60, 60);
     pen.setColor(activeColor);
     p.setRenderHint(QPainter::Antialiasing);
     p.setPen(pen);

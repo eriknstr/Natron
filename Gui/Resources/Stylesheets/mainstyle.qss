@@ -89,11 +89,13 @@ QScrollBar::up-arrow:vertical {
     image : url(:/Resources/Images/scrollbarButton_up.png);
     width: 11px;
     height: 20px;
+    background-color: #373737;
 }
 QScrollBar::down-arrow:vertical {
     image : url(:/Resources/Images/scrollbarButton_down.png);
     width: 11px;
     height: 20px;
+    background-color: #373737;
 }
 QScrollBar::add-page:vertical,
 QScrollBar::sub-page:vertical {
@@ -683,13 +685,21 @@ AnimatedCheckBox[dirty="true"]::indicator:unchecked{
 QMenuBar
 {
     color: %5;
-    background-color: %2;
+    /*background-color: %2;*/
+    background-color: QLinearGradient(
+        x1:0, y1:0,
+        x2:0, y2:1,
+        stop:1 #212121,
+        stop:0.4 #343434/*,
+        stop:0.2 #343434,
+        stop:0.1 #ffaa00*/
+    );
 }
 
 QMenuBar::item
 {
     color: %5;
-    background-color: %2;
+    /*background-color: %2;*/
 }
 
 QMenuBar::item:selected
@@ -721,4 +731,9 @@ QHeaderView::section
 {
     /*background-color: QLinearGradient(x1:0, y1:0, x2:0, y2:1, stop:0 #616161, stop: 0.5 #505050, stop: 0.6 #434343, stop:1 #656565);*/
     background-color: QLinearGradient(x1:0, y1:0, x2:0, y2:1, stop:1 #212121, stop:.4 #343434);
+}
+
+QWidget:item:hover,
+QWidget:item:selected {
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffa02f, stop: 1 #d7801a);
 }
