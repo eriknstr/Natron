@@ -1468,7 +1468,14 @@ Settings::setDefaultValues()
     _customHostName->setDefaultValue(NATRON_ORGANIZATION_DOMAIN_TOPLEVEL "." NATRON_ORGANIZATION_DOMAIN_SUB "." NATRON_APPLICATION_NAME);
     _natronSettingsExist->setDefaultValue(false);
     _systemFontChoice->setDefaultValue(0);
+
+#ifndef __APPLE__
+    // font size 10 looks much better on Win/Lin/BSD
+    _fontSize->setDefaultValue(NATRON_FONT_SIZE_10);
+#else
     _fontSize->setDefaultValue(NATRON_FONT_SIZE_DEFAULT);
+#endif
+
     _checkForUpdates->setDefaultValue(false);
     _enableCrashReports->setDefaultValue(true);
     _documentationSource->setDefaultValue(0);
