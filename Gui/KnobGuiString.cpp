@@ -428,7 +428,7 @@ KnobGuiString::createWidget(QHBoxLayout* layout)
             boldIcon.addPixmap(pixBoldChecked, QIcon::Normal, QIcon::On);
             boldIcon.addPixmap(pixBoldUnchecked, QIcon::Normal, QIcon::Off);
             _setBoldButton = new Button(boldIcon, QString(), _richTextOptions);
-            _setBoldButton->setIconSize( QSize(NATRON_MEDIUM_BUTTON_ICON_SIZE, NATRON_MEDIUM_BUTTON_ICON_SIZE) );
+            _setBoldButton->setIconSize( QSize(NATRON_SMALL_BUTTON_ICON_SIZE, NATRON_SMALL_BUTTON_ICON_SIZE) );
             _setBoldButton->setCheckable(true);
             _setBoldButton->setToolTip( GuiUtils::convertFromPlainText(tr("Bold."), Qt::WhiteSpaceNormal) );
             _setBoldButton->setMaximumSize(18, 18);
@@ -441,7 +441,7 @@ KnobGuiString::createWidget(QHBoxLayout* layout)
 
             _setItalicButton = new Button(italicIcon, QString(), _richTextOptions);
             _setItalicButton->setCheckable(true);
-            _setItalicButton->setIconSize( QSize(NATRON_MEDIUM_BUTTON_ICON_SIZE, NATRON_MEDIUM_BUTTON_ICON_SIZE) );
+            _setItalicButton->setIconSize( QSize(NATRON_SMALL_BUTTON_ICON_SIZE, NATRON_SMALL_BUTTON_ICON_SIZE) );
             _setItalicButton->setToolTip( GuiUtils::convertFromPlainText(tr("Italic."), Qt::WhiteSpaceNormal) );
             _setItalicButton->setMaximumSize(18, 18);
             QObject::connect( _setItalicButton, SIGNAL(clicked(bool)), this, SLOT(italicChanged(bool)) );
