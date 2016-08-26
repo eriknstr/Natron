@@ -146,7 +146,7 @@ CONFIG(enable-osmesa) {
         message("enable-osmesa was passed to the config but you did not set OSMESA_PATH, defaulting to $$OSMESA_PATH")
     }
     # When using static Mesa libraries, the LLVM libs (necessary for llvmpipe) are not included
-    OSMESA_LIBS=$$system(env PKG_CONFIG_PATH=$$OSMESA_PATH/lib/pkgconfig pkg-config --libs osmesa) $$system($$LLVM_PATH/bin/llvm-config --ldflags --libs engine mcjit mcdisassembler)
+    OSMESA_LIBS=$$system(env PKG_CONFIG_PATH=$$OSMESA_PATH/lib/pkgconfig pkg-config --libs --static osmesa) $$system($$LLVM_PATH/bin/llvm-config --ldflags --system-libs --libs engine mcjit mcdisassembler)
 
     DEFINES += HAVE_OSMESA
     INCLUDEPATH += $$system(env PKG_CONFIG_PATH=$$OSMESA_PATH/lib/pkgconfig pkg-config --variable=includedir osmesa)
@@ -452,9 +452,9 @@ unix:!macx {
         PREFIX = /usr/local
     }
     target.path = $${PREFIX}/bin
-    target_icons.path = $${PREFIX}/share/icons
+    target_icons.path = $${PREFIX}/share/pixmaps
     target_icons.files = $PWD/../Gui/Resources/Images/natronIcon256_linux.png $PWD/../Gui/Resources/Images/natronProjectIcon_linux.png
-    target_mime.path = $${PREFIX}/share/mime/application
+    target_mime.path = $${PREFIX}/share/mime/packages
     target_mime.files = $PWD/../Gui/Resources/Mime/x-natron.xml
     target_desktop.path = $${PREFIX}/share/applications
     target_desktop.files = $PWD/../Gui/Resources/Applications/Natron.desktop
